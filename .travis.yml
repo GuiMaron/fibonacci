@@ -16,3 +16,10 @@ after_success:
   - docker build -t guimaron/fibonacci/frontend ./frontend
   - docker build -t guimaron/fibonacci/nginx    ./nginx
   - docker build -t guimaron/fibonacci/worker   ./worker
+  # Log in to the Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Pushing images do DockHub
+  - docker push guimaron/fibonacci/api
+  - docker push guimaron/fibonacci/frontend
+  - docker push guimaron/fibonacci/nginx
+  - docker push guimaron/fibonacci/worker
