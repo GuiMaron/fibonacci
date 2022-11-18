@@ -1,0 +1,18 @@
+
+language: generic 
+sudo:     required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t guimaron/fibonacci/frontend-test -f ./frontend/Dockerfile.dev ./frontend
+
+script:
+  - docker run -e CI=true guimaron/fibonacci/frontend-test npm test
+
+after_success:
+  - docker build -t guimaron/fibonacci/api      ./api
+  - docker build -t guimaron/fibonacci/frontend ./frontend
+  - docker build -t guimaron/fibonacci/nginx    ./nginx
+  - docker build -t guimaron/fibonacci/worker   ./worker
