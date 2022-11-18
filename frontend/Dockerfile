@@ -1,6 +1,6 @@
 
 #   BUILD
-FROM node:14-alpine AS builder
+FROM node:14-alpine AS fibonacci-frontend-builder
 
 WORKDIR /usr/app
 
@@ -16,7 +16,7 @@ RUN npm run build
 #   PRODUCTION
 FROM nginx
 
-COPY --from=builder /usr/app/build/ /usr/share/nginx/html
+COPY --from=fibonacci-frontend-builder  /usr/app/build/ /usr/share/nginx/html
 COPY ./nginx/default.conf   /etc/nginx/conf.d/default.conf
 
 WORKDIR /usr/share/nginx/html
