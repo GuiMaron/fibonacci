@@ -23,3 +23,15 @@ after_success:
   - docker push guimaron/fibonacci-frontend
   - docker push guimaron/fibonacci-nginx
   - docker push guimaron/fibonacci-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'fibonacci'
+  env: 'Fibonacci-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-542898700754'
+  bucket_path: 'fibonacci'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
