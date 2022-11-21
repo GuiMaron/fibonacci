@@ -24,11 +24,12 @@ const pgClient  = new Pool({
 ,   port:       keys.pgPort
 })
 
-pgClient.on('error', () => console.error('Lost PG Connection'))
-pgClient.on('connect', (client) => 
+pgClient.on('error',    (exception) => (console.error('PG ERROR => ' + exception.message)))
+pgClient.on('connect',  (client) => 
 {
+    console .log('PG is Connected')
     client  .query('CREATE TABLE IF NOT EXISTS values (number INT)')
-            .catch((error) => (console.error(error)))
+            .catch((exception) => (console.error(exception)))
 })
 
 

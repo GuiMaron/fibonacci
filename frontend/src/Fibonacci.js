@@ -72,6 +72,10 @@ class Fibonacci extends Component
         await axios.post('/api/values', {
             index:  this.state.index
         })
+        .catch((exception) =>
+        {
+            console.error('PG Error => ' + exception.message)
+        })
 
         this.setState({ index: '' })
 
