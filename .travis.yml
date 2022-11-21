@@ -27,10 +27,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
-  app: 'fibonacci'
-  env: 'Fibonacci-env-1 '
+  app: 'fibonacci-app'
+  env: 'Fibonacciapp-env'
   bucket_name: 'elasticbeanstalk-us-east-1-542898700754'
-  bucket_path: 'fibonacci'
+  bucket_path: 'fibonacci-app'
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
