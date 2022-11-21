@@ -6,9 +6,9 @@ services:
   - docker
 
 before_install:
-  - chmod u+x ./frontend./build-env.sh
-  - touch ./frontend./build-env.sh
-  - ./frontend./build-env.sh
+  - chmod u+x ./frontend/build-env.sh
+  - touch ./frontend/build-env.sh
+  - ./frontend/build-env.sh
   - docker build -t guimaron/fibonacci-frontend-test -f ./frontend/Dockerfile.dev ./frontend
 
 script:
