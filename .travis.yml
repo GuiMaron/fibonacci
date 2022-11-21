@@ -28,7 +28,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
   app: 'fibonacci-app'
-  env: 'Fibonacciapp-env'
+  env: 'Fibonacciapp-env-1'
   bucket_name: 'elasticbeanstalk-us-east-1-542898700754'
   bucket_path: 'fibonacci-app'
   on:
