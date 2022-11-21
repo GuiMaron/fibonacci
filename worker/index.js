@@ -3,6 +3,11 @@ const redis = require('redis')
 
 const keys = require('./keys')
 
+console.log('WORKER => KEYS')
+console.log(keys)
+console.log('WORKER => ENV')
+console.log(process.env)
+
 
 
 const redisClient = redis.createClient({
