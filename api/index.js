@@ -1,6 +1,9 @@
 
 const keys = require('./keys')
 
+console.log('KEYS')
+console.log(keys)
+
 
 
 // Express setup
