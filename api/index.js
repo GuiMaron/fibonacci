@@ -1,9 +1,9 @@
 
 const keys = require('./keys')
 
-console.log('FRONTEND => KEYS')
+console.log('API => KEYS')
 console.log(keys)
-console.log('FRONTEND => ENV')
+console.log('API => ENV')
 console.log(process.env)
 
 

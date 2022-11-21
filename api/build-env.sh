@@ -1,4 +1,4 @@
-FILE="./frontend/.env"
+FILE="./api/.env"
 
 cat <<EOM >$FILE
 REACT_APP_REDIS_HOST=$REACT_APP_REDIS_HOST
