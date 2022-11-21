@@ -9,7 +9,12 @@ before_install:
   - chmod u+x ./frontend/build-env.sh
   - touch ./frontend/build-env.sh
   - ./frontend/build-env.sh
+  - cat./frontend/.env
   - docker build -t guimaron/fibonacci-frontend-test -f ./frontend/Dockerfile.dev ./frontend
+  - chmod u+x ./worker/build-env.sh
+  - touch ./worker/build-env.sh
+  - ./worker/build-env.sh
+  - cat./worker/.env
 
 script:
   - docker run -e CI=true guimaron/fibonacci-frontend-test npm test
