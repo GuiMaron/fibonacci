@@ -6,9 +6,10 @@
     ,   "cors":         "2.8.4"
     ,   "nodemon":      "1.18.3"
     ,   "body-parser":  "*"
+    ,   "dotenv":       "*"
     }, 
     "scripts": {
-        "start":    "node index.js", 
-        "dev":      "nodemon"
+        "start":    "node index.js"
+    ,   "dev":      "nodemon"
     }
 }
