@@ -1,11 +1,6 @@
 
 const keys = require('./keys')
 
-console.log('API => KEYS')
-console.log(keys)
-console.log('API => ENV')
-console.log(process.env)
-
 
 
 // Express setup
