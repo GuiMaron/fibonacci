@@ -10,13 +10,13 @@ services:
       - '/usr/app/node_modules'
       - './api:/usr/app'
     environment:
-      - REACT_APP_REDIS_HOST=redis
-      - REACT_APP_REDIS_PORT=6379
-      - REACT_APP_PGHOST=postgres
-      - REACT_APP_PGPORT=5432
-      - REACT_APP_PGUSER=postgres
-      - REACT_APP_PGPASSWORD=postgres_password
-      - REACT_APP_PGDATABASE=postgres
+      - REDIS_HOST  = redis
+      - REDIS_PORT  = 6379
+      - PGHOST      = postgres
+      - PGPORT      = 5432
+      - PGUSER      = postgres
+      - PGPASSWORD  = postgres_password
+      - PGDATABASE  = postgres
     depends_on:
       - postgres
       - redis
